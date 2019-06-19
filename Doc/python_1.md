@@ -1,10 +1,10 @@
 Python 共内置了 list、 tuple 、dict 和 set 四种基本集合，每个集合对象都能够迭代
-* tuple(元组)
+# tuple(元组)
 tup = ('python', 2.7, 64)
 for i in tup:
     print(i)
     
-* dictionary
+# dictionary
 dic = {}
 dic['lan'] = 'python'
 dic['version'] = 2.7
@@ -13,7 +13,7 @@ for key in dic:
     print(key, dic[key])
     
  set  set 集合将会去除重复项   
-
+# 
 a=[1,2,5,6]
 a.remove(1) remove第一个值
 a.insert(0,1)
