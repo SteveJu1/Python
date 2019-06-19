@@ -6,6 +6,10 @@ for i in tup:
     
 # dictionary
 dic = {}
+d={'a':1,'ga':s}
+print(d['a'])
+del d['a']
+d['s']=10
 dic['lan'] = 'python'
 dic['version'] = 2.7
 dic['platform'] = 64
