@@ -38,3 +38,16 @@ for i in Fib(5):
 def fun()
   global a
 after run fun() a=global a 
+
+var = var1 if condition else var2
+x=4
+y=5
+z = x if x>1 else y
+print(var)
+
+# fuction
+def fun():
+    print('This is a function')
+    a = 1+2
+    print(a)
+fun()    
