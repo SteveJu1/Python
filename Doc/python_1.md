@@ -13,7 +13,15 @@ for key in dic:
     print(key, dic[key])
     
  set  set 集合将会去除重复项   
- 
+
+a=[1,2,5,6]
+a.remove(1) remove第一个值
+a.insert(0,1)
+a.append(1)
+a[0:3]
+print(a.index(2)）
+print(a)
+
  # define a Fib class
 class Fib(object):
     def __init__(self, max):
