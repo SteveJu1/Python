@@ -13,8 +13,8 @@ print(list(ab))  #需要加list来可视化这个功能
 [(1, 4), (2, 5), (3, 6)]
 """
 ```
-```python
 # lambda
+```python
 fun = lambda x,y:x+y
 x=input()
 y=input()
@@ -32,5 +32,15 @@ print(fun(x,y))
 x=2
 y=2
 4
+"""
+```
+# map
+map是把函数和参数绑定在一起
+```python
+def fun(x,y):
+    return (x+y)
+print(list(map(fun,[1],[2])))
+"""
+[3]
 """
 ```
