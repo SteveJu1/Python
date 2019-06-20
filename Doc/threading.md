@@ -10,7 +10,8 @@ threading.active_count()
 查看所有线程信息
 
 threading.enumerate()
-```[<_MainThread(MainThread, started 140736011932608)>, <Thread(SockThread, started daemon 123145376751616)>]
+```
+[<_MainThread(MainThread, started 140736011932608)>, <Thread(SockThread, started daemon 123145376751616)>]
 ```
 输出的结果是一个<_MainThread(...)>带多个<Thread(...)>。
 
