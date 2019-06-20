@@ -25,12 +25,14 @@ threading.current_thread()
 def thread_job():
     print('This is a thread of %s' % threading.current_thread())
 
-def main():
-    thread = threading.Thread(target=thread_job,)   # 定义线程 
-    thread.start()  # 让线程开始工作
-    
-if __name__ == '__main__':
-    main()
+thread = threading.Thread(target=thread_job,)   # 定义线程 
+thread.start()  # 让线程开始工作
+
+thread.join()  #加了join会让线程全跑完在运行后面的语句
+
+print("all done\n")
+
+
     
 ``` python  
 import threading
@@ -58,3 +60,26 @@ def main():
 if __name__ == '__main__':
     main()
 ```    
+```
+import threading
+import time
+
+def T1_job():
+    print("T1 start\n")
+    for i in range(10):
+        time.sleep(0.1)
+    print("T1 finish\n")
+
+def T2_job():
+    print("T2 start\n")
+    print("T2 finish\n")
+
+thread_1 = threading.Thread(target=T1_job, name='T1')
+thread_2 = threading.Thread(target=T2_job, name='T2')
+thread_1.start() # 开启T1
+
+thread_2.start() # 开启T2
+thread_2.join()
+thread_1.join()   #给线程添加join，只有该线程运行完了才能继续往下运行
+print("all done\n")
+```
