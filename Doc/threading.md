@@ -6,17 +6,19 @@ import threading
 获取已激活的线程数
 
 threading.active_count()
-# 2
+#2
 查看所有线程信息
 
 threading.enumerate()
-# [<_MainThread(MainThread, started 140736011932608)>, <Thread(SockThread, started daemon 123145376751616)>]
+```[<_MainThread(MainThread, started 140736011932608)>, <Thread(SockThread, started daemon 123145376751616)>]
+```
 输出的结果是一个<_MainThread(...)>带多个<Thread(...)>。
+
 
 查看现在正在运行的线程
 
 threading.current_thread()
-# <_MainThread(MainThread, started 140736011932608)>
+#<_MainThread(MainThread, started 140736011932608)>
 添加线程，threading.Thread()接收参数target代表这个线程要完成的任务，需自行定义
 
 def thread_job():
