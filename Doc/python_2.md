@@ -38,6 +38,9 @@ class Calculator:
 cal=Calculator('t',10)
 print(cal.name)
 print(cal.pri)#
+如何设置属性的默认值, 直接在def里输入即可，如下:
+
+def __init__(self,name,price,height=10,width=14,weight=16):查看运行结果， 三个有默认值的属性，可以直接输出默认值，这些默认值可以在code中更改, 比如c.wi=17再输出c.wi就会把wi属性值更改为17.同理可推其他属性的更改方法。
 
 # input
 a_input=input()
