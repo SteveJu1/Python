@@ -1,20 +1,20 @@
-正则表达式 (Regular Expression) 又称 RegEx, 是用来匹配字符的一种工具. 
-在一大串字符中寻找你需要的内容. 它常被用在很多方面, 比如网页爬虫, 文稿整理, 数据筛选等等. 最简单的一个例子, 比如我需要爬取网页中每一页的标题. 而网页中的标题常常是这种形式.
-
-<title>我是标题</ title>
-
-
-
-# 比如下面的内容. 我们在 “dog runs to cat” 这句话中寻找是否存在 “cat” 或者 “bird”.
+# 比如. 我们在 “dog runs to cat” 这句话中寻找是否存在 “cat” 或者 “bird”.
+```python
 # matching string
 pattern1 = "cat"
 pattern2 = "bird"
 string = "dog runs to cat"
-print(pattern1 in string)    # True
-print(pattern2 in string)    # False
-
+print(pattern1 in string) 
+...
+ True
+...
+print(pattern2 in string)   
+...
+False
+```
 
 # 更加高级的内容. 要使用正则表达式, 首先需要调用一个 python 的内置模块 re
+```python
 # regular expression
 import re
 pattern1 = "cat"
@@ -22,24 +22,27 @@ pattern2 = "bird"
 string = "dog runs to cat"
 print(re.search(pattern1, string))  # <_sre.SRE_Match object; span=(12, 15), match='cat'>
 print(re.search(pattern2, string))  # None
+```
 
 我们可以使用 [] 将可能的字符囊括进来. 比如 [ab] 就说明我想要找的字符可以是 a 也可以是 b. 
 这里我们还需要注意的是, 建立一个正则的规则, 
 我们在 pattern 的 “” 前面需要加上一个 r 用来表示这是正则表达式, 
 而不是普通字符串. 通过下面这种形式, 如果字符串中出现 “run” 或者是 “ran”, 
+```python
 # multiple patterns ("run" or "ran")
 ptn = r"r[au]n"       # start with "r" means raw string
 print(re.search(ptn, "dog runs to cat"))    # <_sre.SRE_Match object; span=(4, 7), match='run'>
-
+```
 同样, 中括号 [] 中还可以是以下这些或者是这些的组合. 
 比如 [A-Z] 表示的就是所有大写的英文字母.
 [0-9a-z] 表示可以是数字也可以是任何小写字母.
+```python
 # continue
 print(re.search(r"r[A-Z]n", "dog runs to cat"))     # None
 print(re.search(r"r[a-z]n", "dog runs to cat"))     # <_sre.SRE_Match object; span=(4, 7), match='run'>
 print(re.search(r"r[0-9]n", "dog r2ns to cat"))     # <_sre.SRE_Match object; span=(4, 7), match='r2n'>
 print(re.search(r"r[0-9a-z]n", "dog runs to cat"))  # <_sre.SRE_Match object; span=(4, 7), match='run'>
-
+```
 
 按类型匹配 ¶
 除了自己定义规则, 还有很多匹配的规则时提前就给你定义好了的. 下面有一些特殊的匹配类型给大家先总结一下, 然后再上一些例子.
@@ -57,7 +60,7 @@ print(re.search(r"r[0-9a-z]n", "dog runs to cat"))  # <_sre.SRE_Match object; sp
 ^ : 匹配开头
 $ : 匹配结尾
 ? : 前面的字符可有可无
-
+```python
 # \d : decimal digit
 print(re.search(r"r\dn", "run r4n"))                # <_sre.SRE_Match object; span=(4, 7), match='r4n'>
 # \D : any non-decimal digit
@@ -85,13 +88,13 @@ print(re.search(r"cat$", "dog runs to cat"))        # <_sre.SRE_Match object; sp
 # ? : may or may not occur
 print(re.search(r"Mon(day)?", "Monday"))            # <_sre.SRE_Match object; span=(0, 6), match='Monday'>
 print(re.search(r"Mon(day)?", "Mon"))               # <_sre.SRE_Match object; span=(0, 3), match='Mon'>
-
+```
 
 如果一个字符串有很多行, 我们想使用 ^ 形式来匹配行开头的字符, 如果用通常的形式是不成功的. 
 比如下面的 “I” 出现在第二行开头, 但是使用 r"^I" 却匹配不到第二行, 
 这时候, 我们要使用 另外一个参数, 让 re.search() 可以对每一行单独处理. 
 这个参数就是 flags=re.M, 或者这样写也行 flags=re.MULTILINE.
-
+```python
 # multi-line
 string = """
 dog runs to cat.
@@ -99,7 +102,7 @@ I run to dog.
 """
 print(re.search(r"^I", string))                     # None
 print(re.search(r"^I", string, flags=re.M))         # <_sre.SRE_Match object; span=(18, 19), match='I'>
-
+```
 
 重复匹配 
 如果我们想让某个规律被重复使用, 在正则里面也是可以实现的, 而且实现的方式还有很多. 具体可以分为这三种:
@@ -109,7 +112,7 @@ print(re.search(r"^I", string, flags=re.M))         # <_sre.SRE_Match object; sp
 {n, m} : 重复 n 至 m 次
 {n} : 重复 n 次
 举例如下:
-
+```python
 # * : occur 0 or more times
 print(re.search(r"ab*", "a"))                       # <_sre.SRE_Match object; span=(0, 1), match='a'>
 print(re.search(r"ab*", "abbbbb"))                  # <_sre.SRE_Match object; span=(0, 6), match='abbbbb'>
@@ -121,7 +124,7 @@ print(re.search(r"ab+", "abbbbb"))                  # <_sre.SRE_Match object; sp
 # {n, m} : occur n to m times
 print(re.search(r"ab{2,10}", "a"))                  # None
 print(re.search(r"ab{2,10}", "abbbbb"))             # <_sre.SRE_Match object; span=(0, 6), match='abbbbb'>
-
+```
 分组 ¶
 我们甚至可以为找到的内容分组, 使用 () 能轻松实现这件事. 
 通过分组, 我们能轻松定位所找到的内容.
