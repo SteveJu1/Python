@@ -1,7 +1,7 @@
 # Python
-### 安装
-* [Windows 安装]
-* Mac 安装
+ ### 安装
+  * [Windows 安装]
+  * Mac 安装
 
 ### 基础知识
 
