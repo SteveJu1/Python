@@ -223,6 +223,25 @@ def __init__(self,name,price,height=10,width=14,weight=16):
 ```
 
 ### 加载模块
+
+import time
+print(time.localtime)
+import time as t
+print(t.localtime)
+from time import localtime
+localtime()
+from time import *
+
+# 自己创建的模块
+在同一目录下 myPython.py
+import myPython
+myPython.func
+
+break 跳出 
+continue 
+
+
+
 模块就是在你 import 什么东西去python 脚本的时候会用到的.
  * 加载模块
  ```
