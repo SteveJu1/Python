@@ -151,6 +151,41 @@ print(a)
 ```
 ***
 
+### Set() 
+寻找一个句子或者一个 list 当中不同的元素
+```python
+char_list = ['a', 'b', 'c', 'c', 'd', 'd', 'd']
+sentence = 'Welcome Back to This Tutorial'
+print(set(char_list)) # {'b', 'd', 'a', 'c'}
+print(set(sentence)) # {'l', 'm', 'a', 'c', 't', 'r', 's', ' ', 'o', 'W', 'T', 'B', 'i', 'e', 'u', 'h', 'k'}
+
+print(set(char_list+ list(sentence)))     #相加的话先把字符串变为List
+# {'l', 'm', 'a', 'c', 't', 'r', 's', ' ', 'd', 'o', 'W', 'T', 'B', 'i', 'e', 'k', 'h', 'u', 'b'}
+```
+
+添加元素 
+定义好一个 set 之后我们还可以对其添加需要的元素, 使用 add 就能添加某个元素. 但是不是每一个东西都能添加, 比如一个列表.
+```python
+unique_char = set(char_list)
+unique_char.add('x')
+# unique_char.add(['y', 'z']) this is wrong
+print(unique_char)
+# {'x', 'b', 'd', 'c', 'a'}
+```
+清除一个元素可以用 remove 或者 discard, 而清除全部可以用 clear.
+```python
+unique_char.remove('x')
+print(unique_char)
+# {'b', 'd', 'c', 'a'}
+
+unique_char.discard('d')
+print(unique_char)
+# {'b', 'c', 'a'}
+unique_char.clear()
+print(unique_char)
+# set()
+```
+
 ### 正则表达式 (Regular Expression) 
 又称 RegEx, 是用来匹配字符的一种工具. 在一大串字符中寻找你需要的内容. 
 它常被用在很多方面, 比如网页爬虫, 文稿整理, 数据筛选等. 
