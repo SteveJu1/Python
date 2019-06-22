@@ -4,18 +4,18 @@
  
 ### 基础知识
 * 键盘输入
-```
+```Python
 a_input=input()
 print(a_input)
 ```
 * 写文件
-```
+```Python
 file=open('my_file.txt','w') #'w'=write 'a'=append
 file.write('eat apple')
 file.close()
 ```
 * 读文件
-```
+```Python
 file=open('my_file.txt','r') #'r'=read
 content=file.read()
 content=file.readlines()
