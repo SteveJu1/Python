@@ -223,26 +223,26 @@ def __init__(self,name,price,height=10,width=14,weight=16):
 ```
 
 ### 加载模块
-
+模块就是在你 import 什么东西
+```
+*** 第一种方法  import model
 import time
 print(time.localtime)
-import time as t
+*** 第二种方法 import model as md
+import time as t 
 print(t.localtime)
+*** 第三种方法 from model import function
 from time import localtime
 localtime()
 from time import *
-
+```
 # 自己创建的模块
-在同一目录下 myPython.py
+```
+#在同一目录下 myPython.py
 import myPython
 myPython.func
+```
 
-break 跳出 
-continue 
-
-
-
-模块就是在你 import 什么东西去python 脚本的时候会用到的.
  * 加载模块
  ```
  import numpy as np
@@ -273,6 +273,10 @@ file.close()
 
 ### 正则表达式 (Regular Expression) 
 又称 RegEx, 是用来匹配字符的一种工具. 在一大串字符中寻找你需要的内容. 
-它常被用在很多方面, 比如网页爬虫, 文稿整理, 数据筛选等. 
+应用： 比如网页爬虫, 文稿整理, 数据筛选等. 
 最简单的一个例子, 比如我需要爬取网页中每一页的标题. 而网页中的标题常常是这种形式.
 <title>我是标题</ title>
+
+break 跳出 
+continue 
+
