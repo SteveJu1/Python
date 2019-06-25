@@ -47,7 +47,7 @@ print(re.search(r"r[0-9a-z]n", "dog runs to cat"))  # <_sre.SRE_Match object; sp
 ```
 
 特殊的匹配类型总结
-```python
+```
 \d : 任何数字
 \D : 不是数字
 \s : 任何 white space, 如 [\t\n\r\f\v]
@@ -61,6 +61,8 @@ print(re.search(r"r[0-9a-z]n", "dog runs to cat"))  # <_sre.SRE_Match object; sp
 ^ : 匹配开头
 $ : 匹配结尾
 ? : 前面的字符可有可无
+```
+```
 
 # \d : decimal digit
 print(re.search(r"r\dn", "run r4n"))                # <_sre.SRE_Match object; span=(4, 7), match='r4n'>
