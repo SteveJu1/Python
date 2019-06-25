@@ -141,34 +141,38 @@ print(match.group(2))                               # Date: Feb/12/2017
 ```
 有时候, 组会很多, 光用数字可能比较难找到自己想要的组, 这时候, 如果有一个名字当做索引, 会是一件很容易的事. 
 我们字需要在括号的开头写上这样的形式 ?P<名字> 就给这个组定义了一个名字. 然后就能用这个名字找到这个组的内容.
-
+```
 match = re.search(r"(?P<id>\d+), Date: (?P<date>.+)", "ID: 021523, Date: Feb/12/2017")
 print(match.group('id'))                            # 021523
 print(match.group('date'))                          # Date: Feb/12/2017
-
+```
 前面我们说的都是只找到了最开始匹配上的一项而已, 如果需要找到全部的匹配项, 我们可以使用 findall 功能. 
 然后返回一个列表. 注意下面还有一个新的知识点, | 是 or 的意思, 要不是前者要不是后者
+```
 # findall
 print(re.findall(r"r[ua]n", "run ran ren"))         # ['run', 'ran']
-
+```
 我们还能通过正则表达式匹配上一些形式的字符串然后再替代掉这些字符串.
 使用这种匹配 re.sub(), 将会比 python 自带的 string.replace() 要灵活多变.
+```
 # | : or
 print(re.findall(r"(run|ran)", "run ran ren"))      # ['run', 'ran']
 
 # re.sub() replace
 print(re.sub(r"r[au]ns", "catches", "dog runs to cat"))     # dog catches to cat
-
+```
 # 分割字符串
 使用"a is b".split(" ")可以产生一个列表来保存所有单词.
 正则也可以
+```
 # re.split()
 print(re.split(r"[,;\.]", "a;b,c.d;e"))             # ['a', 'b', 'c', 'd', 'e']
-
+```
 最后, 我们还能使用 compile 过后的正则, 来对这个正则重复使用. 
 先将正则 compile 进一个变量, 比如 compiled_re, 然后直接使用这个 compiled_re 来搜索.
+```
 # compile
 compiled_re = re.compile(r"r[ua]n")
 print(compiled_re.search("dog ran to cat"))     # <_sre.SRE_Match object; span=(4, 7), match='ran'>
-
+```
 [参考来源](https://www.cnblogs.com/huxi/archive/2010/07/04/1771073.html)
