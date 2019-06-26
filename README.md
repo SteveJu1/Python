@@ -2,7 +2,7 @@
  ### 安装
   * [Windows下Python环境的安装（Anaconda+Jupyter notebook+Pycharm）](https://zhuanlan.zhihu.com/p/59027692)
  
-### [基础知识](https://github.com/lukkyy/Python/blob/master/Doc/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
+### [Python基础知识汇集](https://github.com/lukkyy/Python/blob/master/Doc/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
 
 ## Numpy & Pandas 
 #### 应用：数据分析.机器学习.深度学习
