@@ -2,9 +2,16 @@
  ### 安装
   * [Windows下Python环境的安装（Anaconda+Jupyter notebook+Pycharm）](https://zhuanlan.zhihu.com/p/59027692)
  
-### [Python基础知识汇集](https://github.com/lukkyy/Python/blob/master/Doc/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
-
-## Numpy & Pandas 
+### [Python基础知识汇集](https://github.com/lukkyy/Python/blob/master/Doc/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)  
+```
+下载网上的数据
+import tensorflow as tf
+zip_file = tf.keras.utils.get_file(origin="https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip",
+                                   fname="cats_and_dogs_filtered.zip", extract=True)    #下载数据并解压
+[参考](https://github.com/tensorflow/docs/blob/master/site/en/tutorials/images/transfer_learning.ipynb)
+```
+    
+### Numpy & Pandas 
 #### 应用：数据分析.机器学习.深度学习
 #### 优点：
 * 1）运算速度快：numpy 和 pandas 都是采用 C 语言编写, pandas 又是基于 numpy, 是 numpy 的升级版本。
