@@ -3,8 +3,8 @@
   * [Windows下Python环境的安装（Anaconda+Jupyter notebook+Pycharm）](https://zhuanlan.zhihu.com/p/59027692)
  
 ### [Python基础知识汇集](https://github.com/lukkyy/Python/blob/master/Doc/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)  
-```
-下载网上的数据
+```python
+本地下载网上的数据
 import tensorflow as tf
 zip_file = tf.keras.utils.get_file(origin="https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip",
                                    fname="cats_and_dogs_filtered.zip", extract=True)    #下载数据并解压
