@@ -12,7 +12,7 @@ zip_file = tf.keras.utils.get_file(origin="https://storage.googleapis.com/mledu-
 ```
     
 ### Numpy & Pandas 
-***
+___
 #### 应用：数据分析.机器学习.深度学习
 #### 优点：
 * 1）运算速度快：numpy 和 pandas 都是采用 C 语言编写, pandas 又是基于 numpy, 是 numpy 的升级版本。
@@ -79,4 +79,24 @@ a = np.array([[[1,2,3],[4,5,6]]])
 array = np.array([[1,2,3],[2,3,4]])
 print(array.ndim)
 ```
-***
+#### 功能
+
+##### 分割
+```
+A = np.arange(12).reshape(3, 4)
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+# 纵向分割, 分成两部分, 按列分割
+print np.split(A, 2, axis = 1)
+[array([[0, 1],[4, 5],[8, 9]]), array([[ 2, 3],[ 6, 7],[10, 11]])]
+# 横向分割, 分成三部分, 按行分割
+print np.split(A, 3, axis = 0)
+[array([[0, 1, 2, 3]]), array([[4, 5, 6, 7]]), array([[ 8, 9, 10, 11]])]
+
+ 不均等分割
+print np.array_split(A, 3, axis = 1)
+
+[array([[0, 1],[4, 5],[8, 9]]), array([[2],[6],[10]]), array([[3],[7],[11]])]
+```
+___
