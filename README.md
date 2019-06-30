@@ -12,6 +12,7 @@ zip_file = tf.keras.utils.get_file(origin="https://storage.googleapis.com/mledu-
 ```
     
 ### Numpy & Pandas 
+***
 #### 应用：数据分析.机器学习.深度学习
 #### 优点：
 * 1）运算速度快：numpy 和 pandas 都是采用 C 语言编写, pandas 又是基于 numpy, 是 numpy 的升级版本。
@@ -26,7 +27,6 @@ import numpy as np  #为了方便使用numpy 采用np简写
 ```
 # array：创建数组        
 a = np.array([2,23,4]) 
-
 # dtype：指定数据类型    
 a = np.array([2,23,4],dtype=np.int)
 print(a.dtype)
@@ -59,6 +59,16 @@ array([  1.        ,   1.47368421,   1.94736842,   2.42105263,
          6.68421053,   7.15789474,   7.63157895,   8.10526316,
          8.57894737,   9.05263158,   9.52631579,  10.        ])
 """
+
+np.expand_dims:用于扩展数组的形状
+a = np.array([[[1,2,3],[4,5,6]]])
+>>> a.shape #(1, 2, 3)
+>>> b = np.expand_dims(a, axis=0)  #axis=0,1h好像是一样的结果
+# array([[[[1, 2, 3],
+         [4, 5, 6]]]])
+ >>>  np.expand_dims(a, axis=2)  
+# array([[[[1, 2, 3]],
+        [[4, 5, 6]]]]) #(1, 2, 1, 3)
 ```
 
 #### 属性
@@ -69,3 +79,4 @@ array([  1.        ,   1.47368421,   1.94736842,   2.42105263,
 array = np.array([[1,2,3],[2,3,4]])
 print(array.ndim)
 ```
+***
